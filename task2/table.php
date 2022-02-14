@@ -70,16 +70,16 @@ $users = [
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+    <?php
+        if (count($users) > 0) {
+    ?>
     <table>
         <thead>
-            <?php foreach($users[0] as $index=>$data) {?>
+            <?php foreach($users[count($users)-1] as $index=>$data) {?>
            <th class="p-3 mb-2 bg-primary text-white"><?=$index?></th>
            <?php }?>
         </thead>
         <tbody>
-       
-        
-            
             <?php foreach($users as $index=>$data) {?>
                 <tr>
                 <?php foreach($data as $key=>$value) {?>
@@ -98,9 +98,6 @@ $users = [
                         {
                             echo $value;
                         }
-                        
-
-                        
                         ?>
                     </td>
                 <?php }?>
