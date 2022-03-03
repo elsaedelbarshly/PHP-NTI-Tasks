@@ -21,24 +21,27 @@ $products = new Product();
 $products->setStatus(1);
 $productsResult = $products->mostRecentProducts();
 $productsRatedResult = $products->mostRatedProducts();
-if ($productsResult) {
+$productsData = "";
+if ($productsResult) 
+{
 	$productsData = $productsResult->fetch_all(MYSQLI_ASSOC);
-} else {
-	header('Location:errors/404.php');
-	die;
 }
-if ($productsOrderedResult) {
-	$productsOrderedData = $productsOrderedResult->fetch_all(MYSQLI_ASSOC);
-} else {
-	header('Location:errors/404.php');
-	die;
-}
-if ($productsRatedResult) {
-	$productsRatedData = $productsRatedResult->fetch_all(MYSQLI_ASSOC);
-} else {
-	header('Location:errors/404.php');
-	die;
-}
+// else {
+// 	header('Location:errors/404.php');
+// 	die;
+// }
+// if ($productsOrderedResult) {
+// 	$productsOrderedData = $productsOrderedResult->fetch_all(MYSQLI_ASSOC);
+// } else {
+// 	header('Location:errors/404.php');
+// 	die;
+// }
+// if ($productsRatedResult) {
+// 	$productsRatedData = $productsRatedResult->fetch_all(MYSQLI_ASSOC);
+// } else {
+// 	header('Location:errors/404.php');
+// 	die;
+// }
 ?>
 <!-- Slider Start -->
 <div class="slider-area">
@@ -909,7 +912,7 @@ if ($productsRatedResult) {
     <div class="container">
         <div class="product-top-bar section-border mb-55">
             <div class="section-title-wrap text-center">
-                <h3 class="section-title">Last Product Added</h3>
+                <h3 class="section-title">the most product Rated </h3>
             </div>
         </div>
         <div class="tab-content jump">
